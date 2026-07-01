@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/Users/uday/Desktop/Portfolio/node_modules/.bin/next dev *)",
+      "Bash(curl -s http://localhost:3001)",
+      "Bash(/Users/uday/Desktop/Portfolio/node_modules/.bin/next build *)",
+      "Bash(git -C /Users/uday/Desktop/Portfolio init)",
+      "Bash(git -C /Users/uday/Desktop/Portfolio add .)",
+      "Bash(git -C /Users/uday/Desktop/Portfolio commit -m \"Initial commit — Shaurya portfolio\")"
+    ]
+  }
+}

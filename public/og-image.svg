@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0D0B09"/>
+  <!-- Dot grid -->
+  <defs>
+    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="white" opacity="0.045"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <!-- Accent line -->
+  <line x1="60" y1="400" x2="400" y2="400" stroke="#D4793A" stroke-width="1.5"/>
+  <!-- Name -->
+  <text x="60" y="340" font-family="Georgia, serif" font-style="italic" font-size="160"
+    font-weight="300" fill="#EDE8DE" letter-spacing="-4" opacity="0.95">Shaurya</text>
+  <!-- Tagline -->
+  <text x="62" y="440" font-family="'Courier New', monospace" font-size="18"
+    fill="#6E6660" letter-spacing="2">GRADE 11 · IB DIPLOMA · HARROW INT'L BENGALURU · CLASS OF 2027</text>
+  <!-- Accent dot -->
+  <circle cx="1130" cy="80" r="12" fill="#D4793A" opacity="0.85"/>
+  <circle cx="1130" cy="80" r="28" fill="#D4793A" opacity="0.08"/>
+</svg>
