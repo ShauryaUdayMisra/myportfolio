@@ -10,17 +10,16 @@ Before going live, complete these items in the order listed:
 
 ### Content (in `src/data/content.ts`)
 - [ ] **Surname** — add your last name to `meta.name` if you want it shown
-- [ ] **Substack URL** — replace every `TODO_SUBSTACK_URL` with your actual Substack link
+- [ ] **Substack URL** — replace every `TODO_SUBSTACK_URL` with your actual Substack link (links with a `TODO_` placeholder are hidden automatically until replaced)
 - [ ] **GitHub URL** — replace `TODO_GITHUB_URL`
 - [ ] **LinkedIn URL** — replace `TODO_LINKEDIN_URL`
-- [ ] **About intro** — rewrite the first paragraph in `about.paragraphs` in your own voice (Cuttack → Bengaluru journey)
+- [ ] **About text** — rewrite the "About" block in the `more` section in your own voice (Cuttack → Bengaluru journey)
 - [ ] **Metrics** — update `47` and `10` in INTRN's metrics if numbers have changed
-- [ ] **JLI essay** — add the essay URL to `writing[1].url` if publicly available
+- [ ] **JLI essay** — add the essay URL in the `blog` section's links block if publicly available
 - [ ] **Site URL** — update `meta.siteUrl` to your final Railway URL once deployed
 
 ### Assets (drop files into `/public/`)
-- [ ] **Headshot** — add your photo to `/public/headshot.jpg` (or `.png`) and update the `<img>` in `src/components/About.tsx` (currently shows a placeholder block)
-- [ ] **Resume PDF** — add `/public/resume.pdf`; the download link in Contact is already wired up
+- [ ] **Resume PDF** — add `/public/resume.pdf`; the download link in the footer is already wired up
 - [ ] **OG image** — replace `/public/og-image.svg` with a real `/public/og-image.png` (1200×630 px) for better social sharing; update `meta.ogImage` in `content.ts` to `/og-image.png`
 
 ### Design
@@ -67,28 +66,27 @@ railway domain      # prints your public URL
 
 ## Project structure
 
+The site is a hub-and-spoke: the homepage (`/`) shows five clickable tiles —
+INTRN, Moro Gami, Crypto Club, Blog, More — and each opens its own page at
+`/<slug>`, rendered from the matching entry in `content.sections`.
+
 ```
 src/
 ├── app/
-│   ├── globals.css      # design tokens, utility classes
+│   ├── globals.css      # design tokens, utility classes, home-tile styles
 │   ├── layout.tsx       # fonts, metadata, html shell
-│   └── page.tsx         # page composition
+│   ├── page.tsx         # homepage — name + five section tiles
+│   └── [slug]/
+│       └── page.tsx     # section pages (intrn, moro-gami, crypto-club, blog, more)
 ├── components/
-│   ├── Nav.tsx          # fixed nav, mobile menu
-│   ├── Hero.tsx         # full-viewport intro
-│   ├── Ventures.tsx     # INTRN + Moro Gami case studies
-│   ├── Leadership.tsx   # Crypto Club, Herald, Boarding
-│   ├── Writing.tsx      # Substack + JLI essay
-│   ├── About.tsx        # bio + interests
-│   ├── Contact.tsx      # email + links
-│   ├── Footer.tsx       # minimal footer
-│   ├── CountUp.tsx      # animated metric numbers
-│   └── SectionHeader.tsx# reusable section label
-├── data/
-│   └── content.ts       # ← ALL copy and links live here
-└── hooks/
-    └── useInView.ts     # IntersectionObserver helper
+│   ├── Footer.tsx       # email, links, note — shown on every page
+│   └── CountUp.tsx      # animated metric numbers
+└── data/
+    └── content.ts       # ← ALL copy, links, and section blocks live here
 ```
+
+To add or reorder sections, edit the `sections` array in `content.ts` — the
+homepage tiles and pages update automatically.
 
 **Everything you need to edit is in `src/data/content.ts`.** Component files only need to change if you want structural or design changes.
 

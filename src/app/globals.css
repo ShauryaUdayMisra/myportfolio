@@ -187,23 +187,49 @@
   }
 }
 
-/* ─── Nav ────────────────────────────────────────────────────────────────── */
-.nav-scrolled {
+/* ─── Home tiles ─────────────────────────────────────────────────────────── */
+.home-tile {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.75rem 0.5rem;
   border-bottom: 1px solid var(--border);
-  background: rgba(13, 11, 9, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  transition: background-color 0.3s ease, padding-left 0.3s ease;
 }
 
-/* ─── Hero ───────────────────────────────────────────────────────────────── */
-.hero-name {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 300;
-  line-height: 0.9;
-  letter-spacing: -0.03em;
-  font-size: clamp(5rem, 14vw, 15rem);
-  color: var(--ink);
+@media (min-width: 768px) {
+  .home-tile {
+    grid-template-columns: 4rem 1fr auto;
+    gap: 1.5rem;
+    padding: 2.5rem 1rem;
+  }
+}
+
+.home-tile:hover {
+  background: var(--surface);
+  padding-left: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .home-tile:hover {
+    padding-left: 2rem;
+  }
+}
+
+.home-tile:hover .tile-name {
+  color: var(--tile-accent);
+}
+
+.home-tile .tile-arrow {
+  opacity: 0;
+  transform: translateX(-8px);
+}
+
+.home-tile:hover .tile-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--tile-accent);
 }
 
 /* ─── Section label ──────────────────────────────────────────────────────── */
@@ -223,33 +249,6 @@
   flex: 1;
   height: 1px;
   background: var(--border);
-}
-
-/* ─── Network SVG animation ──────────────────────────────────────────────── */
-.network-node {
-  animation: pulse-node 3s ease-in-out infinite;
-}
-
-.network-node:nth-child(2) { animation-delay: 0.6s; }
-.network-node:nth-child(3) { animation-delay: 1.2s; }
-.network-node:nth-child(4) { animation-delay: 0.3s; }
-.network-node:nth-child(5) { animation-delay: 0.9s; }
-.network-node:nth-child(6) { animation-delay: 1.5s; }
-.network-node:nth-child(7) { animation-delay: 0.5s; }
-.network-node:nth-child(8) { animation-delay: 1.8s; }
-
-@keyframes pulse-node {
-  0%, 100% { opacity: 0.4; r: 2.5px; }
-  50% { opacity: 0.9; r: 3.5px; }
-}
-
-.network-svg-float {
-  animation: float-svg 8s ease-in-out infinite;
-}
-
-@keyframes float-svg {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
 }
 
 /* ─── Metric number ──────────────────────────────────────────────────────── */
