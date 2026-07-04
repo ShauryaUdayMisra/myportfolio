@@ -60,23 +60,21 @@ export type Section = {
 
 export const content = {
   meta: {
-    // TODO: Add surname if you want full name shown (e.g. "Shaurya Misra")
-    name: "Shaurya",
-    title: "Shaurya — Builder, Founder, IB '27",
+    name: "Shaurya Uday Misra",
+    title: "Shaurya Uday Misra — Builder, Founder, IB '27",
     description:
-      "Grade 11 IB Diploma student at Harrow International School Bengaluru. Founder of INTRN, Creator of Moro Gami, Editor-in-Chief of Harrow Herald.",
+      "Grade 11 IB Diploma student at Harrow International School Bengaluru. Founder of INTRN, Creator of Moro Agami, Editor-in-Chief of Harrow Herald.",
     // TODO: Update to your live Railway URL once deployed
     siteUrl: "https://shaurya.up.railway.app",
     // TODO: Replace /og-image.png with a real 1200×630 image in /public/
     ogImage: "/og-image.svg",
     email: "shauryauday1@gmail.com",
-    // Accent colour — this is a warm amber placeholder. TODO: pick your final colour.
-    accentColor: "#D4793A",
+    accentColor: "#E0A83C",
   },
 
   home: {
     intro:
-      "Building platforms that widen access — to internships, to career guidance, to financial literacy. Away from the keyboard I'm Editor-in-Chief of the Harrow Herald and Head of Boarding (Boys) at Harrow Bengaluru — the rest of that story is under More, and I write about crypto, fintech, and monetary systems on my blog.",
+      "I grew up in Cuttack, Odisha, and I'm now in Grade 11 at Harrow Bengaluru. Most of what I work on comes back to one idea: the right opportunity shouldn't depend on knowing the right people. That's why I started INTRN, which places high school students in real internships at real companies, and why I'm building Moro Agami, a career guidance chatbot for students in rural Odisha who have no one to ask. At school I founded our first ever crypto club, I edit the Harrow Herald as Editor-in-Chief, and I'm Head of Boarding for the boys. The rest of that story is under More, and I write about crypto, fintech and money on my blog.",
     chips: ["IB '27", "Bengaluru", "Builder"],
   },
 
@@ -133,18 +131,19 @@ export const content = {
       ],
     },
 
-    // ── 02 · Moro Gami ──────────────────────────────────────────────────────
+    // ── 02 · Moro Agami ─────────────────────────────────────────────────────
     {
-      slug: "moro-gami",
+      slug: "moro-agami",
       index: "02",
-      name: "Moro Gami",
+      name: "Moro Agami",
       nameScript: "ମୋ ଭବିଷ୍ୟ",
       tagline:
         "AI vocational-guidance chatbot for rural Odisha — Odia, Hindi, and English.",
       accent: "#4A9D6F",
       accentDim: "rgba(74,157,111,0.07)",
       chips: ["Creator", "In Development", "IB CAS Project"],
-      url: null,
+      url: "https://moro-agami-production.up.railway.app",
+      urlLabel: "Try it live",
       blocks: [
         {
           kind: "metrics",
@@ -174,7 +173,7 @@ export const content = {
       index: "03",
       name: "Crypto Club",
       tagline:
-        "The school's first crypto curriculum — DeFi, NFTs, DAOs, and a token each student deploys themselves.",
+        "The school's first ever crypto club. DeFi, NFTs, DAOs, and a token each student deploys themselves.",
       accent: "#E8A33D",
       accentDim: "rgba(232,163,61,0.07)",
       chips: ["Founder", "2024 — present"],
@@ -183,7 +182,7 @@ export const content = {
         {
           kind: "text",
           label: "What",
-          body: "Founded the Crypto & Bitcoin Club at Harrow International School Bengaluru — the school's first crypto curriculum. A 12-week programme covering DeFi, NFTs, and DAOs.",
+          body: "Founded the Crypto & Bitcoin Club at Harrow International School Bengaluru, the school's first ever crypto club. A 12-week programme covering DeFi, NFTs, and DAOs.",
         },
         {
           kind: "text",
@@ -197,7 +196,7 @@ export const content = {
         },
         {
           kind: "list",
-          label: "Curriculum",
+          label: "What we cover",
           items: ["Bitcoin & money", "DeFi", "NFTs", "DAOs", "ERC-20 deployment"],
         },
         {
@@ -208,7 +207,7 @@ export const content = {
               title: "Here's what we've been doing",
               meta: "Notion",
               description:
-                "Session notes, curriculum materials, and the token project — updated as the club goes.",
+                "Session notes, materials, and the token project, updated as the club goes.",
               // TODO: Make this page public in Notion (Share → Publish) or
               // visitors will hit a login wall; swap in the public URL if different.
               url: "https://www.notion.so/2972af5f29c58000ad8df99e834914fc",
@@ -241,8 +240,8 @@ export const content = {
       name: "More",
       tagline:
         "Editor-in-Chief, Head of Boarding, and the rest of the story.",
-      accent: "#D4793A",
-      accentDim: "rgba(212,121,58,0.07)",
+      accent: "#E0A83C",
+      accentDim: "rgba(224,168,60,0.07)",
       chips: ["Leadership", "About"],
       url: null,
       blocks: [
@@ -269,9 +268,7 @@ export const content = {
         {
           kind: "text",
           label: "About",
-          // TODO: Replace the first sentence with 1–2 sentences in your own voice
-          // about the Cuttack-to-Bengaluru journey or what shaped you.
-          body: "From Cuttack, Odisha, to Bengaluru. The through-line across most of what I build is access — better opportunities for students without the right connections (INTRN), better information for students who've never had a career counsellor (Moro Gami), better financial literacy for peers who've heard of Bitcoin but not what's underneath it.",
+          body: "I grew up in Cuttack, Odisha, and since then I have lived in Bengaluru, Singapore and Connecticut. Moving that much gives you a global outlook, and it teaches you to adapt fast. If I had to name one strength it would be that: adapting quickly and finding opportunities where most people do not see them. The through-line across what I build is access. Better opportunities for students without the right connections (INTRN), better information for students who have never had a career counsellor (Moro Agami), and better financial literacy for peers who have heard of Bitcoin but not what's underneath it.",
         },
         {
           kind: "list",

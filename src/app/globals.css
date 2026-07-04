@@ -4,20 +4,20 @@
 
 /* ─── Design tokens ──────────────────────────────────────────────────────── */
 :root {
-  --bg: #0d0b09;
-  --surface: #141210;
-  --surface-2: #1c1916;
-  --border: #272320;
-  --border-strong: #3d3830;
-  --ink: #ede8de;
-  --ink-2: #b0a898;
-  --ink-3: #6e6660;
-  --ink-4: #3d3830;
-  /* TODO: Shaurya — replace #D4793A with your final accent colour everywhere */
-  --accent: #d4793a;
-  --accent-dim: rgba(212, 121, 58, 0.12);
+  /* Midnight navy + soft gold palette */
+  --bg: #0a0f1c;
+  --surface: #101627;
+  --surface-2: #161e31;
+  --border: #1e2739;
+  --border-strong: #313d55;
+  --ink: #e9ecf3;
+  --ink-2: #a9b2c5;
+  --ink-3: #6b768c;
+  --ink-4: #3a445c;
+  --accent: #e0a83c;
+  --accent-dim: rgba(224, 168, 60, 0.12);
 
-  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-display: var(--font-display-serif), Georgia, serif;
   --font-sans: var(--font-dm-sans), system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), "Courier New", monospace;
 }

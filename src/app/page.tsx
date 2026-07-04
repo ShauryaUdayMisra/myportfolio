@@ -15,14 +15,11 @@ export default function Home() {
               {content.meta.name}
             </h1>
           </div>
-          <div
-            className="animate-fade-up opacity-0 mt-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5"
-            style={{ animationDelay: "0.1s" }}
-          >
-            <p className="text-ink-2 text-body-lg font-light max-w-prose leading-relaxed">
+          <div className="animate-fade-up opacity-0 mt-6" style={{ animationDelay: "0.1s" }}>
+            <p className="text-ink-2 text-body-lg font-light leading-relaxed">
               {content.home.intro}
             </p>
-            <div className="flex flex-wrap gap-2 shrink-0" aria-label="Tags">
+            <div className="flex flex-wrap gap-2 mt-6" aria-label="Tags">
               {content.home.chips.map((chip) => (
                 <span key={chip} className="chip">
                   {chip}

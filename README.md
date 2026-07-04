@@ -23,8 +23,9 @@ Before going live, complete these items in the order listed:
 - [ ] **OG image** — replace `/public/og-image.svg` with a real `/public/og-image.png` (1200×630 px) for better social sharing; update `meta.ogImage` in `content.ts` to `/og-image.png`
 
 ### Design
-- [ ] **Accent colour** — `#D4793A` is a warm amber placeholder. Once you've picked your final colour, replace it in:
-  - `src/app/globals.css` → `--accent:` and `--accent-dim:`
+- [ ] **Accent colour** — current palette is midnight navy (`#0A0F1C`) with soft gold accent (`#E0A83C`). To change it, update:
+  - `src/app/globals.css` → the `:root` design tokens
+  - `tailwind.config.ts` → `theme.extend.colors`
   - `src/data/content.ts` → `meta.accentColor`
   - `public/favicon.svg` and `public/og-image.svg`
 
@@ -67,7 +68,7 @@ railway domain      # prints your public URL
 ## Project structure
 
 The site is a hub-and-spoke: the homepage (`/`) shows five clickable tiles —
-INTRN, Moro Gami, Crypto Club, Blog, More — and each opens its own page at
+INTRN, Moro Agami, Crypto Club, Blog, More — and each opens its own page at
 `/<slug>`, rendered from the matching entry in `content.sections`.
 
 ```
@@ -77,7 +78,7 @@ src/
 │   ├── layout.tsx       # fonts, metadata, html shell
 │   ├── page.tsx         # homepage — name + five section tiles
 │   └── [slug]/
-│       └── page.tsx     # section pages (intrn, moro-gami, crypto-club, blog, more)
+│       └── page.tsx     # section pages (intrn, moro-agami, crypto-club, blog, more)
 ├── components/
 │   ├── Footer.tsx       # email, links, note — shown on every page
 │   └── CountUp.tsx      # animated metric numbers
@@ -97,5 +98,5 @@ homepage tiles and pages update automatically.
 - **Framework:** Next.js 15 (App Router)
 - **Language:** TypeScript
 - **Styles:** Tailwind CSS v3 + custom CSS properties
-- **Fonts:** Fraunces (display serif) · DM Sans (grotesque) · JetBrains Mono (monospace) via `next/font/google`
+- **Fonts:** Instrument Serif (display) · DM Sans (grotesque) · JetBrains Mono (monospace) via `next/font/google`
 - **Deploy:** Railway (Nixpacks, Node 20)

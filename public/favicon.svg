@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="4" fill="#0D0B09"/>
+  <rect width="32" height="32" rx="4" fill="#0A0F1C"/>
   <!-- S letterform as a simple geometric mark -->
   <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle"
     font-family="Georgia, serif" font-style="italic" font-size="22"
-    font-weight="300" fill="#EDE8DE">S</text>
+    font-weight="300" fill="#E9ECF3">S</text>
   <!-- Accent dot -->
-  <circle cx="24" cy="8" r="2.5" fill="#D4793A"/>
+  <circle cx="24" cy="8" r="2.5" fill="#E0A83C"/>
 </svg>
