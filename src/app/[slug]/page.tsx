@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { content, isLiveUrl, type Section, type SectionBlock } from "@/data/content";
 import CountUp from "@/components/CountUp";
 import Footer from "@/components/Footer";
@@ -134,9 +134,11 @@ function Block({ block, accent }: { block: SectionBlock; accent: string }) {
 }
 
 function SectionNav({ current }: { current: Section }) {
-  const i = content.sections.findIndex((s) => s.slug === current.slug);
-  const prev = content.sections[(i - 1 + content.sections.length) % content.sections.length];
-  const next = content.sections[(i + 1) % content.sections.length];
+  // External sections (e.g. Blog → Substack) have no inner page to link to.
+  const pages = content.sections.filter((s) => !s.external);
+  const i = pages.findIndex((s) => s.slug === current.slug);
+  const prev = pages[(i - 1 + pages.length) % pages.length];
+  const next = pages[(i + 1) % pages.length];
   return (
     <nav
       className="flex justify-between gap-4 border-t border-border pt-8 mt-section-sm"
@@ -166,6 +168,8 @@ export default async function SectionPage({
   const { slug } = await params;
   const section = content.sections.find((s) => s.slug === slug);
   if (!section) notFound();
+  // External sections live elsewhere — send direct visitors straight there.
+  if (section.external && isLiveUrl(section.url)) redirect(section.url);
 
   return (
     <>

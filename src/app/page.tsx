@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { content } from "@/data/content";
+import { content, isLiveUrl, type Section } from "@/data/content";
 import Footer from "@/components/Footer";
+
+const sections: Section[] = content.sections;
 
 export default function Home() {
   return (
@@ -36,38 +38,68 @@ export default function Home() {
           aria-label="Site sections"
         >
           <ul className="list-none border-t border-border" role="list">
-            {content.sections.map((section, i) => (
-              <li key={section.slug}>
-                <Link
-                  href={`/${section.slug}`}
-                  className="home-tile group animate-fade-up opacity-0"
-                  style={
-                    {
-                      animationDelay: `${0.15 + i * 0.07}s`,
-                      "--tile-accent": section.accent,
-                    } as React.CSSProperties
-                  }
-                >
-                  <span className="font-mono text-2xs tracking-widest text-ink-4 pt-2.5 md:pt-4">
-                    {section.index}
-                  </span>
-                  <span className="min-w-0">
-                    <span className="tile-name block font-display italic font-light leading-none tracking-tight text-[clamp(2rem,5.5vw,4.5rem)] transition-colors duration-300">
-                      {section.name}
-                    </span>
-                    <span className="block mt-2 text-ink-3 text-small font-light max-w-prose leading-relaxed">
-                      {section.tagline}
-                    </span>
-                  </span>
-                  <span
-                    className="tile-arrow self-center font-display text-2xl md:text-3xl text-ink-4 transition-all duration-300"
-                    aria-hidden="true"
+            {sections.map((section, i) => {
+              const external = section.external && isLiveUrl(section.url);
+              return (
+                <li key={section.slug}>
+                  <div
+                    className="home-tile group animate-fade-up opacity-0"
+                    style={
+                      {
+                        animationDelay: `${0.15 + i * 0.07}s`,
+                        "--tile-accent": section.accent,
+                      } as React.CSSProperties
+                    }
                   >
-                    →
-                  </span>
-                </Link>
-              </li>
-            ))}
+                    {/* Stretched link — covers the whole tile */}
+                    {external ? (
+                      <a
+                        href={section.url!}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0"
+                        aria-label={`${section.name} — ${section.urlLabel ?? section.url} (opens in new tab)`}
+                      />
+                    ) : (
+                      <Link
+                        href={`/${section.slug}`}
+                        className="absolute inset-0"
+                        aria-label={section.name}
+                      />
+                    )}
+
+                    <span className="font-mono text-2xs tracking-widest text-ink-4 pt-2.5 md:pt-4">
+                      {section.index}
+                    </span>
+                    <span className="min-w-0">
+                      <span className="tile-name block font-display italic font-light leading-none tracking-tight text-[clamp(2rem,5.5vw,4.5rem)] transition-colors duration-300">
+                        {section.name}
+                      </span>
+                      <span className="block mt-2 text-ink-3 text-small font-light max-w-prose leading-relaxed">
+                        {section.tagline}
+                      </span>
+                      {section.showUrlOnTile && isLiveUrl(section.url) && (
+                        <a
+                          href={section.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="link-accent relative z-10 mt-3 font-mono text-2xs tracking-widest uppercase"
+                          style={{ color: section.accent }}
+                        >
+                          {section.urlLabel ?? section.url} ↗
+                        </a>
+                      )}
+                    </span>
+                    <span
+                      className="tile-arrow self-center font-display text-2xl md:text-3xl text-ink-4 transition-all duration-300"
+                      aria-hidden="true"
+                    >
+                      {external ? "↗" : "→"}
+                    </span>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </main>

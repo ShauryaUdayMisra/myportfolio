@@ -189,6 +189,7 @@
 
 /* ─── Home tiles ─────────────────────────────────────────────────────────── */
 .home-tile {
+  position: relative; /* anchors the stretched link overlay */
   display: grid;
   grid-template-columns: 2.5rem 1fr auto;
   gap: 1rem;

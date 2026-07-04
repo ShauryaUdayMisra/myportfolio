@@ -50,6 +50,11 @@ export type Section = {
   chips: string[];
   url: string | null;
   urlLabel?: string;
+  // Homepage tile behaviour:
+  // external: true  → the tile links straight to `url` (new tab), no inner page
+  // showUrlOnTile   → the tile also shows `url` as its own small clickable link
+  external?: boolean;
+  showUrlOnTile?: boolean;
   blocks: SectionBlock[];
 };
 
@@ -71,7 +76,7 @@ export const content = {
 
   home: {
     intro:
-      "Building platforms that widen access — to internships, to career guidance, to financial literacy.",
+      "Building platforms that widen access — to internships, to career guidance, to financial literacy. Away from the keyboard I'm Editor-in-Chief of the Harrow Herald and Head of Boarding (Boys) at Harrow Bengaluru — the rest of that story is under More, and I write about crypto, fintech, and monetary systems on my blog.",
     chips: ["IB '27", "Bengaluru", "Builder"],
   },
 
@@ -88,12 +93,15 @@ export const content = {
       chips: ["Founder", "Live", "2024 — present"],
       url: "https://intrn.xyz",
       urlLabel: "intrn.xyz",
+      showUrlOnTile: true,
       blocks: [
         {
+          // Stats mirror the "Platform Highlights" on intrn.xyz — keep in sync.
           kind: "metrics",
           items: [
-            { value: 47, suffix: "+", label: "students placed" },
-            { value: 10, suffix: "+", label: "partner companies" },
+            { value: 57, suffix: "", label: "students registered" },
+            { value: 17, suffix: "", label: "companies partnered" },
+            { value: 12, suffix: "", label: "internship opportunities" },
           ],
         },
         {
@@ -192,6 +200,21 @@ export const content = {
           label: "Curriculum",
           items: ["Bitcoin & money", "DeFi", "NFTs", "DAOs", "ERC-20 deployment"],
         },
+        {
+          kind: "links",
+          label: "Follow along",
+          items: [
+            {
+              title: "Here's what we've been doing",
+              meta: "Notion",
+              description:
+                "Session notes, curriculum materials, and the token project — updated as the club goes.",
+              // TODO: Make this page public in Notion (Share → Publish) or
+              // visitors will hit a login wall; swap in the public URL if different.
+              url: "https://www.notion.so/2972af5f29c58000ad8df99e834914fc",
+            },
+          ],
+        },
       ],
     },
 
@@ -203,39 +226,12 @@ export const content = {
       tagline: "Writing on crypto, fintech, blockchain, and monetary systems.",
       accent: "#5B8DD9",
       accentDim: "rgba(91,141,217,0.07)",
-      // TODO: Replace with your actual Substack URL (also in contact.links below)
-      url: "TODO_SUBSTACK_URL",
+      // The homepage Blog tile links straight here — no inner page.
+      url: "https://substack.com/@thehandshake01",
       urlLabel: "The Handshake on Substack",
+      external: true,
       chips: ["Writer", "Ongoing"],
-      blocks: [
-        {
-          kind: "text",
-          label: "About",
-          body: "I write The Handshake, a Substack on crypto, fintech, blockchain, and technology — trying to explain what's underneath the headlines. Probably thinking too much about monetary systems.",
-        },
-        {
-          kind: "links",
-          label: "Selected writing",
-          items: [
-            {
-              title: "The Handshake",
-              meta: "Substack · Ongoing",
-              description:
-                "Writing on crypto, fintech, blockchain, and technology.",
-              // TODO: Replace with your actual Substack URL
-              url: "TODO_SUBSTACK_URL",
-            },
-            {
-              title: "Should We Fear a Cashless Society?",
-              meta: "Essay · John Locke Institute",
-              description:
-                "An economics essay exploring the implications of moving toward a fully cashless monetary system.",
-              // TODO: Add link if the essay is publicly available
-              url: null,
-            },
-          ],
-        },
-      ],
+      blocks: [],
     },
 
     // ── 05 · More ───────────────────────────────────────────────────────────
@@ -289,6 +285,20 @@ export const content = {
             "Monetary Systems",
           ],
         },
+        {
+          kind: "links",
+          label: "Selected writing",
+          items: [
+            {
+              title: "Should We Fear a Cashless Society?",
+              meta: "Essay · John Locke Institute",
+              description:
+                "An economics essay exploring the implications of moving toward a fully cashless monetary system.",
+              // TODO: Add link if the essay is publicly available
+              url: null,
+            },
+          ],
+        },
       ],
     },
   ] satisfies Section[],
@@ -297,8 +307,7 @@ export const content = {
     email: "shauryauday1@gmail.com",
     links: [
       { label: "INTRN", href: "https://intrn.xyz", external: true, download: false },
-      // TODO: Replace with actual Substack URL
-      { label: "Substack", href: "TODO_SUBSTACK_URL", external: true, download: false },
+      { label: "Substack", href: "https://substack.com/@thehandshake01", external: true, download: false },
       // TODO: Replace with your GitHub URL
       { label: "GitHub", href: "TODO_GITHUB_URL", external: true, download: false },
       // TODO: Replace with your LinkedIn URL
