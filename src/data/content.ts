@@ -78,7 +78,7 @@ export const content = {
     intro:
       "I grew up in Cuttack, Odisha, and I'm now in Grade 11 at Harrow Bengaluru. Most of what I work on comes back to one idea: the right opportunity shouldn't depend on knowing the right people. That's why I started INTRN, which places high school students in real internships at real companies, and why I'm building Moro Agami, a career guidance chatbot for students in rural Odisha who have no one to ask. At school I founded our first ever crypto club, I edit the Harrow Herald as Editor-in-Chief, and I'm Head of Boarding for the boys.",
     // Rendered after `intro` with "blog" as an in-page link to the #blog section.
-    blogLead: "I write about blockchain, crypto, fintech and money on my",
+    blogLead: "I write about crypto, blockchain, money and things I'm interested in on my",
     chips: ["IB '27", "Bengaluru", "Builder", "Head of Boarding"],
   },
 
