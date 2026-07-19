@@ -13,9 +13,7 @@ Before going live, complete these items in the order listed:
 - [ ] **Substack URL** — replace every `TODO_SUBSTACK_URL` with your actual Substack link (links with a `TODO_` placeholder are hidden automatically until replaced)
 - [ ] **GitHub URL** — replace `TODO_GITHUB_URL`
 - [ ] **LinkedIn URL** — replace `TODO_LINKEDIN_URL`
-- [ ] **About text** — rewrite the "About" block in the `more` section in your own voice (Cuttack → Bengaluru journey)
 - [ ] **Metrics** — update `47` and `10` in INTRN's metrics if numbers have changed
-- [ ] **JLI essay** — add the essay URL in the `more` section's "Selected writing" links block if publicly available
 - [ ] **Site URL** — update `meta.siteUrl` to your final Railway URL once deployed
 
 ### Assets (drop files into `/public/`)
@@ -67,8 +65,8 @@ railway domain      # prints your public URL
 
 ## Project structure
 
-The site is a hub-and-spoke: the homepage (`/`) shows four clickable tiles —
-INTRN, Moro Agami, Crypto Club, More — each opening its own page at `/<slug>`,
+The site is a hub-and-spoke: the homepage (`/`) shows three clickable tiles —
+INTRN, Moro Agami, Crypto Club — each opening its own page at `/<slug>`,
 rendered from the matching entry in `content.sections`. Below the tiles the
 homepage lists every post from The Handshake (the Substack blog); each post
 opens on-site at `/blog/<slug>` in a new tab, with a "Read on Substack" button
@@ -81,7 +79,7 @@ src/
 │   ├── layout.tsx       # fonts, metadata, html shell
 │   ├── page.tsx         # homepage — name + section tiles + blog list
 │   ├── [slug]/
-│   │   └── page.tsx     # section pages (intrn, moro-agami, crypto-club, more)
+│   │   └── page.tsx     # section pages (intrn, moro-agami, crypto-club)
 │   └── blog/
 │       ├── page.tsx     # /blog → redirects to /#blog
 │       └── [postSlug]/

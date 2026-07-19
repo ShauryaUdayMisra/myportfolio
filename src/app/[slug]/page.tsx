@@ -72,7 +72,7 @@ function Block({ block, accent }: { block: SectionBlock; accent: string }) {
               const inner = (
                 <>
                   <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-                    <span className="font-display italic text-headline text-ink">
+                    <span className="font-display text-headline text-ink">
                       {item.title}
                       {isLiveUrl(item.url) && (
                         <span className="text-ink-4 text-lg ml-2" aria-hidden="true">
@@ -116,7 +116,7 @@ function Block({ block, accent }: { block: SectionBlock; accent: string }) {
             {block.items.map((role) => (
               <li key={role.title} className="py-6">
                 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-                  <span className="font-display italic text-headline text-ink">
+                  <span className="font-display text-headline text-ink">
                     {role.title}
                   </span>
                   <span className="mono-label">{role.period}</span>
@@ -189,10 +189,10 @@ export default async function SectionPage({
             <div className="section-index" style={{ color: section.accent }}>
               {section.index} / {String(content.sections.length).padStart(2, "0")}
             </div>
-            <h1 className="font-display italic font-light leading-none tracking-tight text-[clamp(3rem,8vw,7rem)] mt-6">
+            <h1 className="font-display font-light leading-none tracking-tight text-[clamp(3rem,8vw,7rem)] mt-6">
               {section.name}
               {section.nameScript && (
-                <span className="block text-headline text-ink-3 not-italic font-sans mt-3">
+                <span className="block text-headline text-ink-3 font-sans mt-3">
                   {section.nameScript} — “my future”
                 </span>
               )}

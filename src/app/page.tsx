@@ -12,7 +12,7 @@ export default function Home() {
         {/* ── Masthead ─────────────────────────────────────────────────── */}
         <header className="max-w-site mx-auto w-full px-6 md:px-10 pt-16 md:pt-24 pb-10 md:pb-14">
           <div className="animate-fade-up opacity-0">
-            <h1 className="font-display italic font-light leading-none tracking-tight text-[clamp(3.5rem,9vw,8rem)]">
+            <h1 className="font-display font-light leading-none tracking-tight text-[clamp(3.5rem,9vw,8rem)]">
               {content.meta.name}
             </h1>
           </div>
@@ -70,7 +70,7 @@ export default function Home() {
                       {section.index}
                     </span>
                     <span className="min-w-0">
-                      <span className="tile-name block font-display italic font-light leading-none tracking-tight text-[clamp(2rem,5.5vw,4.5rem)] transition-colors duration-300">
+                      <span className="tile-name block font-display font-light leading-none tracking-tight text-[clamp(2rem,5.5vw,4.5rem)] transition-colors duration-300">
                         {section.name}
                       </span>
                       <span className="block mt-2 text-ink-3 text-small font-light max-w-prose leading-relaxed">
@@ -119,7 +119,7 @@ export default function Home() {
             <div className="mono-label" style={{ color: BLOG_ACCENT }}>
               Blog
             </div>
-            <h2 className="font-display italic font-light leading-none tracking-tight text-[clamp(2rem,5.5vw,4.5rem)] mt-4">
+            <h2 className="font-display font-light leading-none tracking-tight text-[clamp(2rem,5.5vw,4.5rem)] mt-4">
               The Handshake
             </h2>
             <p className="text-ink-3 text-small font-light mt-3 max-w-prose">
@@ -129,10 +129,8 @@ export default function Home() {
           <ul className="list-none divide-y divide-border border-y border-border mt-8" role="list">
             {posts.map((post) => (
               <li key={post.slug}>
-                <a
+                <Link
                   href={`/blog/${post.slug}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="block py-6 group hover:bg-surface transition-colors duration-200 -mx-4 px-4"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-6">
@@ -150,7 +148,7 @@ export default function Home() {
                       {postDescription(post)}
                     </p>
                   )}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

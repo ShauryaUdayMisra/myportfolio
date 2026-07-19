@@ -76,8 +76,8 @@ export const content = {
 
   home: {
     intro:
-      "I grew up in Cuttack, Odisha, and I'm now in Grade 11 at Harrow Bengaluru. Most of what I work on comes back to one idea: the right opportunity shouldn't depend on knowing the right people. That's why I started INTRN, which places high school students in real internships at real companies, and why I'm building Moro Agami, a career guidance chatbot for students in rural Odisha who have no one to ask. At school I founded our first ever crypto club, I edit the Harrow Herald as Editor-in-Chief, and I'm Head of Boarding for the boys. The rest of that story is under More, and I write about crypto, fintech and money on my blog.",
-    chips: ["IB '27", "Bengaluru", "Builder"],
+      "I grew up in Cuttack, Odisha, and I'm now in Grade 11 at Harrow Bengaluru. Most of what I work on comes back to one idea: the right opportunity shouldn't depend on knowing the right people. That's why I started INTRN, which places high school students in real internships at real companies, and why I'm building Moro Agami, a career guidance chatbot for students in rural Odisha who have no one to ask. At school I founded our first ever crypto club, I edit the Harrow Herald as Editor-in-Chief, and I'm Head of Boarding for the boys. I write about crypto, fintech and money on my blog.",
+    chips: ["IB '27", "Bengaluru", "Builder", "Head of Boarding"],
   },
 
   sections: [
@@ -219,71 +219,6 @@ export const content = {
       ],
     },
 
-    // ── 04 · More ───────────────────────────────────────────────────────────
-    {
-      slug: "more",
-      index: "04",
-      name: "More",
-      tagline:
-        "Editor-in-Chief, Head of Boarding, and the rest of the story.",
-      accent: "#E0A83C",
-      accentDim: "rgba(224,168,60,0.07)",
-      chips: ["Leadership", "About"],
-      url: null,
-      blocks: [
-        {
-          kind: "roles",
-          label: "Roles",
-          items: [
-            {
-              title: "Editor-in-Chief",
-              org: "Harrow Herald",
-              period: "2024 — present",
-              description:
-                "Leads the school magazine — editorial direction, commissioning, editing, and production.",
-            },
-            {
-              title: "Head of Boarding (Boys)",
-              org: "Harrow International School Bengaluru",
-              period: "2024 — present",
-              description:
-                "An appointed leadership role within the school's boarding community.",
-            },
-          ],
-        },
-        {
-          kind: "text",
-          label: "About",
-          body: "I grew up in Cuttack, Odisha, and since then I have lived in Bengaluru, Singapore and Connecticut. Moving that much gives you a global outlook, and it teaches you to adapt fast. If I had to name one strength it would be that: adapting quickly and finding opportunities where most people do not see them. The through-line across what I build is access. Better opportunities for students without the right connections (INTRN), better information for students who have never had a career counsellor (Moro Agami), and better financial literacy for peers who have heard of Bitcoin but not what's underneath it.",
-        },
-        {
-          kind: "list",
-          label: "Interests",
-          items: [
-            "Crypto & DeFi",
-            "Fintech",
-            "Quant Finance",
-            "AI",
-            "Startups",
-            "Monetary Systems",
-          ],
-        },
-        {
-          kind: "links",
-          label: "Selected writing",
-          items: [
-            {
-              title: "Should We Fear a Cashless Society?",
-              meta: "Essay · John Locke Institute",
-              description:
-                "An economics essay exploring the implications of moving toward a fully cashless monetary system.",
-              // TODO: Add link if the essay is publicly available
-              url: null,
-            },
-          ],
-        },
-      ],
-    },
   ] satisfies Section[],
 
   contact: {

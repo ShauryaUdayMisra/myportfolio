@@ -86,7 +86,7 @@ export default async function PostPage({
             <div className="mono-label" style={{ color: BLOG_ACCENT }}>
               The Handshake
             </div>
-            <h1 className="font-display italic font-light leading-[1.05] tracking-tight text-[clamp(2.25rem,5.5vw,4.25rem)] mt-6 max-w-4xl">
+            <h1 className="font-display font-light leading-[1.05] tracking-tight text-[clamp(2.25rem,5.5vw,4.25rem)] mt-6 max-w-4xl">
               {post.title}
             </h1>
             {post.subtitle && (

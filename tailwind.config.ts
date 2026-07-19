@@ -5,15 +5,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#0A0F1C",
-        surface: "#101627",
-        "surface-2": "#161E31",
-        border: "#1E2739",
-        "border-strong": "#313D55",
-        ink: "#E9ECF3",
-        "ink-2": "#A9B2C5",
-        "ink-3": "#6B768C",
-        "ink-4": "#3A445C",
+        bg: "#1F2B47",
+        surface: "#273652",
+        "surface-2": "#2E3E5E",
+        border: "#39496B",
+        "border-strong": "#4A5C82",
+        ink: "#EDF0F7",
+        "ink-2": "#B4BDD1",
+        "ink-3": "#8290AC",
+        "ink-4": "#566180",
         accent: "#E0A83C",
         "accent-dim": "rgba(224,168,60,0.12)",
         intrn: "#B46BFC",
@@ -22,7 +22,7 @@ const config: Config = {
         "moro-dim": "rgba(74,157,111,0.08)",
       },
       fontFamily: {
-        display: ["var(--font-display-serif)", "Georgia", "serif"],
+        display: ["var(--font-display-grotesk)", "system-ui", "sans-serif"],
         sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
         mono: ["var(--font-jetbrains)", "Courier New", "monospace"],
       },

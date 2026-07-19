@@ -4,20 +4,20 @@
 
 /* ─── Design tokens ──────────────────────────────────────────────────────── */
 :root {
-  /* Midnight navy + soft gold palette */
-  --bg: #0a0f1c;
-  --surface: #101627;
-  --surface-2: #161e31;
-  --border: #1e2739;
-  --border-strong: #313d55;
-  --ink: #e9ecf3;
-  --ink-2: #a9b2c5;
-  --ink-3: #6b768c;
-  --ink-4: #3a445c;
+  /* Pastel navy + soft gold palette */
+  --bg: #1f2b47;
+  --surface: #273652;
+  --surface-2: #2e3e5e;
+  --border: #39496b;
+  --border-strong: #4a5c82;
+  --ink: #edf0f7;
+  --ink-2: #b4bdd1;
+  --ink-3: #8290ac;
+  --ink-4: #566180;
   --accent: #e0a83c;
   --accent-dim: rgba(224, 168, 60, 0.12);
 
-  --font-display: var(--font-display-serif), Georgia, serif;
+  --font-display: var(--font-display-grotesk), system-ui, sans-serif;
   --font-sans: var(--font-dm-sans), system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), "Courier New", monospace;
 }
@@ -255,7 +255,6 @@
 /* ─── Metric number ──────────────────────────────────────────────────────── */
 .metric-value {
   font-family: var(--font-display);
-  font-style: italic;
   font-weight: 300;
   font-size: clamp(3.5rem, 8vw, 7rem);
   line-height: 0.95;
@@ -287,8 +286,7 @@
 .post-body h3,
 .post-body h4 {
   font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--ink);
   line-height: 1.15;
   margin: 2em 0 0.6em;
