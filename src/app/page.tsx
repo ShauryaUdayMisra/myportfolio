@@ -117,10 +117,10 @@ export default function Home() {
           />
           <div className="mt-10 md:mt-12">
             <div className="mono-label" style={{ color: BLOG_ACCENT }}>
-              The Handshake · Blog
+              Blog
             </div>
             <h2 className="font-display italic font-light leading-none tracking-tight text-[clamp(2rem,5.5vw,4.5rem)] mt-4">
-              Writing
+              The Handshake
             </h2>
             <p className="text-ink-3 text-small font-light mt-3 max-w-prose">
               Crypto, fintech, blockchain, and monetary systems.
