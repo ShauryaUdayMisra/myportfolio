@@ -18,7 +18,19 @@ export default function Home() {
           </div>
           <div className="animate-fade-up opacity-0 mt-6" style={{ animationDelay: "0.1s" }}>
             <p className="text-ink-2 text-body-lg font-light leading-relaxed">
-              {content.home.intro}
+              {content.home.intro}{" "}
+              {content.home.blogLead}{" "}
+              <a
+                href="#blog"
+                className="font-normal underline underline-offset-4 transition-colors duration-200 hover:text-ink"
+                style={{
+                  color: BLOG_ACCENT,
+                  textDecorationColor: BLOG_ACCENT,
+                }}
+              >
+                blog
+              </a>
+              .
             </p>
             <div className="flex flex-wrap gap-2 mt-6" aria-label="Tags">
               {content.home.chips.map((chip) => (
@@ -109,9 +121,10 @@ export default function Home() {
           style={{ animationDelay: "0.5s" }}
         >
           <div
-            className="h-px"
+            className="h-[2px] rounded-full"
             style={{
-              background: `linear-gradient(to right, ${BLOG_ACCENT}, transparent 60%)`,
+              background: `linear-gradient(to right, ${BLOG_ACCENT}, ${BLOG_ACCENT} 35%, transparent 95%)`,
+              boxShadow: `0 0 12px rgba(91, 141, 217, 0.45)`,
             }}
             aria-hidden="true"
           />
