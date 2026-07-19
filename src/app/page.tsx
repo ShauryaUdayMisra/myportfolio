@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { content, isLiveUrl, type Section } from "@/data/content";
-import { posts, formatPostDate, BLOG_ACCENT } from "@/data/posts";
+import { posts, formatPostDate, postDescription, BLOG_ACCENT } from "@/data/posts";
 import Footer from "@/components/Footer";
 
 const sections: Section[] = content.sections;
@@ -145,9 +145,9 @@ export default function Home() {
                       {formatPostDate(post.date)}
                     </span>
                   </div>
-                  {post.subtitle && (
+                  {postDescription(post) && (
                     <p className="text-ink-3 text-small font-light leading-relaxed max-w-prose mt-2">
-                      {post.subtitle}
+                      {postDescription(post)}
                     </p>
                   )}
                 </a>
