@@ -134,8 +134,9 @@ function Block({ block, accent }: { block: SectionBlock; accent: string }) {
 }
 
 function SectionNav({ current }: { current: Section }) {
-  // External sections (e.g. Blog → Substack) have no inner page to link to.
-  const pages = content.sections.filter((s) => !s.external);
+  // External sections have no inner page to link to.
+  const sections: Section[] = content.sections;
+  const pages = sections.filter((s) => !s.external);
   const i = pages.findIndex((s) => s.slug === current.slug);
   const prev = pages[(i - 1 + pages.length) % pages.length];
   const next = pages[(i + 1) % pages.length];
@@ -166,7 +167,8 @@ export default async function SectionPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const section = content.sections.find((s) => s.slug === slug);
+  const sections: Section[] = content.sections;
+  const section = sections.find((s) => s.slug === slug);
   if (!section) notFound();
   // External sections live elsewhere — send direct visitors straight there.
   if (section.external && isLiveUrl(section.url)) redirect(section.url);
@@ -185,7 +187,7 @@ export default async function SectionPage({
 
           <div className="mt-12 md:mt-16 animate-fade-up opacity-0">
             <div className="section-index" style={{ color: section.accent }}>
-              {section.index} / 05
+              {section.index} / {String(content.sections.length).padStart(2, "0")}
             </div>
             <h1 className="font-display italic font-light leading-none tracking-tight text-[clamp(3rem,8vw,7rem)] mt-6">
               {section.name}

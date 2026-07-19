@@ -2,9 +2,11 @@
 // CONTENT FILE — edit everything here; nothing else needs to change.
 // Shaurya: look for TODO comments to fill in your details.
 //
-// Site structure: the homepage shows 5 clickable tiles, one per entry in
-// `sections` below. Each tile opens its own page at /<slug>. To change what a
-// page says, edit its `blocks`. Block kinds:
+// Site structure: the homepage shows one clickable tile per entry in
+// `sections` below, followed by the blog post list. Each tile opens its own
+// page at /<slug>. Blog posts live in src/data/posts.json (rendered at
+// /blog/<slug>), regenerated from Substack via: node scripts/import-substack.mjs
+// To change what a section page says, edit its `blocks`. Block kinds:
 //   { kind: "text",    label, body }                     — a labelled paragraph
 //   { kind: "metrics", items: [{ value, suffix, label }]}— animated big numbers
 //   { kind: "list",    label, items: ["…"] }             — a simple tag list
@@ -217,26 +219,10 @@ export const content = {
       ],
     },
 
-    // ── 04 · Blog ───────────────────────────────────────────────────────────
-    {
-      slug: "blog",
-      index: "04",
-      name: "Blog",
-      tagline: "Writing on crypto, fintech, blockchain, and monetary systems.",
-      accent: "#5B8DD9",
-      accentDim: "rgba(91,141,217,0.07)",
-      // The homepage Blog tile links straight here — no inner page.
-      url: "https://substack.com/@thehandshake01",
-      urlLabel: "The Handshake on Substack",
-      external: true,
-      chips: ["Writer", "Ongoing"],
-      blocks: [],
-    },
-
-    // ── 05 · More ───────────────────────────────────────────────────────────
+    // ── 04 · More ───────────────────────────────────────────────────────────
     {
       slug: "more",
-      index: "05",
+      index: "04",
       name: "More",
       tagline:
         "Editor-in-Chief, Head of Boarding, and the rest of the story.",

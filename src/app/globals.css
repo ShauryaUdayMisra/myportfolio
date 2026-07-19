@@ -272,6 +272,117 @@
   margin-bottom: 0.625rem;
 }
 
+/* ─── Blog post body (imported Substack HTML, element selectors only) ────── */
+.post-body {
+  color: var(--ink-2);
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+.post-body p {
+  margin: 1.25em 0;
+}
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 2em 0 0.6em;
+}
+.post-body h1,
+.post-body h2 {
+  font-size: 1.9rem;
+}
+.post-body h3 {
+  font-size: 1.5rem;
+}
+.post-body h4 {
+  font-size: 1.25rem;
+}
+.post-body a {
+  color: #5b8dd9;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(91, 141, 217, 0.4);
+  transition: text-decoration-color 0.2s ease;
+}
+.post-body a:hover {
+  text-decoration-color: #5b8dd9;
+}
+.post-body strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.post-body blockquote {
+  border-left: 2px solid #5b8dd9;
+  margin: 1.5em 0;
+  padding-left: 1.25em;
+  color: var(--ink-2);
+  font-style: italic;
+}
+.post-body ul,
+.post-body ol {
+  margin: 1.25em 0;
+  padding-left: 1.5em;
+}
+.post-body li {
+  margin: 0.4em 0;
+}
+.post-body li::marker {
+  color: var(--ink-3);
+}
+.post-body hr {
+  border: 0;
+  height: 1px;
+  background: var(--border);
+  margin: 2.5em 0;
+}
+.post-body figure {
+  margin: 2em 0;
+}
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2px;
+  margin-inline: auto;
+}
+.post-body figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  text-align: center;
+  margin-top: 0.75em;
+}
+.post-body pre,
+.post-body code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+.post-body pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 1em;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+.post-body :not(pre) > code {
+  background: var(--surface);
+  padding: 0.15em 0.4em;
+  border-radius: 2px;
+}
+.post-body iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  margin: 1.5em 0;
+}
+
 /* ─── Scrollbar ──────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;

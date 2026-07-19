@@ -4,7 +4,7 @@ Personal portfolio site built with Next.js 15, TypeScript, and Tailwind CSS. Dep
 
 ---
 
-## TODO Checklist
+## TODO
 
 Before going live, complete these items in the order listed:
 
@@ -15,7 +15,7 @@ Before going live, complete these items in the order listed:
 - [ ] **LinkedIn URL** — replace `TODO_LINKEDIN_URL`
 - [ ] **About text** — rewrite the "About" block in the `more` section in your own voice (Cuttack → Bengaluru journey)
 - [ ] **Metrics** — update `47` and `10` in INTRN's metrics if numbers have changed
-- [ ] **JLI essay** — add the essay URL in the `blog` section's links block if publicly available
+- [ ] **JLI essay** — add the essay URL in the `more` section's "Selected writing" links block if publicly available
 - [ ] **Site URL** — update `meta.siteUrl` to your final Railway URL once deployed
 
 ### Assets (drop files into `/public/`)
@@ -67,29 +67,43 @@ railway domain      # prints your public URL
 
 ## Project structure
 
-The site is a hub-and-spoke: the homepage (`/`) shows five clickable tiles —
-INTRN, Moro Agami, Crypto Club, Blog, More — and each opens its own page at
-`/<slug>`, rendered from the matching entry in `content.sections`.
+The site is a hub-and-spoke: the homepage (`/`) shows four clickable tiles —
+INTRN, Moro Agami, Crypto Club, More — each opening its own page at `/<slug>`,
+rendered from the matching entry in `content.sections`. Below the tiles the
+homepage lists every post from The Handshake (the Substack blog); each post
+opens on-site at `/blog/<slug>` in a new tab, with a "Read on Substack" button
+on the post page.
 
 ```
 src/
 ├── app/
-│   ├── globals.css      # design tokens, utility classes, home-tile styles
+│   ├── globals.css      # design tokens, utility classes, .post-body styles
 │   ├── layout.tsx       # fonts, metadata, html shell
-│   ├── page.tsx         # homepage — name + five section tiles
-│   └── [slug]/
-│       └── page.tsx     # section pages (intrn, moro-agami, crypto-club, blog, more)
+│   ├── page.tsx         # homepage — name + section tiles + blog list
+│   ├── [slug]/
+│   │   └── page.tsx     # section pages (intrn, moro-agami, crypto-club, more)
+│   └── blog/
+│       ├── page.tsx     # /blog → redirects to /#blog
+│       └── [postSlug]/
+│           └── page.tsx # full blog post pages
 ├── components/
 │   ├── Footer.tsx       # email, links, note — shown on every page
 │   └── CountUp.tsx      # animated metric numbers
 └── data/
-    └── content.ts       # ← ALL copy, links, and section blocks live here
+    ├── content.ts       # ← ALL section copy, links, and blocks live here
+    ├── posts.json       # generated blog posts — do not hand-edit
+    └── posts.ts         # typed wrapper + date/reading-time helpers
 ```
 
 To add or reorder sections, edit the `sections` array in `content.ts` — the
 homepage tiles and pages update automatically.
 
 **Everything you need to edit is in `src/data/content.ts`.** Component files only need to change if you want structural or design changes.
+
+**Blog posts sync from Substack:** after publishing a new post, run
+`node scripts/import-substack.mjs` and commit the updated `src/data/posts.json`
+plus any new images in `public/blog/`. Post images are downloaded locally and
+Substack subscribe/share widgets are stripped automatically.
 
 ---
 
